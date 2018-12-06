@@ -1,0 +1,294 @@
+<!--------------- Page header starts here ------------------->
+<html>
+
+<head>
+
+<title>JunkPunk Store - Welcome!</title>
+<link rel="stylesheet" type="text/css" href="jpstl.css">
+
+<!------------------ Rollover code starts here ---------------------->
+<script language="JavaScript" type="text/javascript">
+<!--
+if (document.images)
+{
+homeout= new Image();
+homeout.src = "images/homeout.gif";
+homeover = new Image();
+homeover.src = "images/homeover.gif";
+
+officeout= new Image();
+officeout.src = "images/officeout.gif";
+officeover = new Image();
+officeover.src = "images/officeover.gif";
+
+technoout= new Image();
+technoout.src = "images/technoout.gif";
+technoover = new Image();
+technoover.src = "images/technoover.gif";
+
+seasonout= new Image();
+seasonout.src = "images/seasonout.gif";
+seasonover = new Image();
+seasonover.src = "images/seasonover.gif";
+}
+
+function over(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "over.src");
+	}
+
+function out(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "out.src");
+	}
+
+// -->
+</script>
+<!------------------------ END Rollover code ------------------------------->
+
+<!---------------------- Pop up window code stars here ----------------------->
+<script language="JavaScript">
+
+ <!--
+
+ function openWin( windowURL, windowName, windowFeatures )
+ 		{
+ 		return window.open( windowURL, windowName, windowFeatures );
+ 		}
+
+ // -->
+
+</script>
+<!----------------- END Pop up window code --------------------->
+
+<!-- Banner ad code stars here -->
+
+<SCRIPT language="javascript" SRC="bannerad.js"></SCRIPT>
+
+<!-- END banner ad code -->
+
+
+
+
+
+
+
+
+
+<SCRIPT language="javascript" type="text/javascript">
+<!--Hide script from older browsers
+//Login cookie
+
+function setLoginCookie()
+	{
+	//get data from the form
+
+	var vEmailLogin = document.loginFrm.txtEmailLogin.value
+	var vPassLogin = document.loginFrm.txtPassLogin.value
+	var vRemPass = document.loginFrm.chkRemPass.checked
+	alert(vEmailLogin + vPassLogin + vRemPass)
+
+  //check if there are registration cookies and get their values
+
+  var allCookies=document.cookie
+
+  if (allCookies!="")
+	  {
+  		//get Email cookie value
+			var cEmailPos = allCookies.indexOf("cEmail=")
+			var start = cEmailPos + 7
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cEmail2 = allCookies.substring(start, end)
+
+			//get Password cookie value
+			var cPassPos = allCookies.indexOf("cPass=")
+			var start = cPassPos + 6
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cPass2 = allCookies.substring(start, end)
+
+			if((vEmailLogin!=cEmail2) || (vPassLogin!=cPass2))
+				{
+				alert('\t ' + "YOU ARE NOT IDENTIFIED AS A REGISTERED USER."+ '\r ' + '\r ' + "Please check email address and password provided or go to Registration page.")
+				document.loginFrm.txtEmailLogin.focus()
+				document.loginFrm.txtEmailLogin.select()
+				}
+			else
+				{
+				if(vRemPass == false)
+					{
+					document.cookie = "cEmailLogin=" + vEmailLogin;
+					document.cookie = "cPassLogin=" + vPassLogin;
+					alert("Session cookie")
+					}
+				else
+					{
+					if (vRemPass == true)
+        				{
+        				var vExpDate = new Date
+        				vExpDate.setMonth(vExpDate.getMonth() + 1)
+
+						document.cookie = "cEmailLogin=" + vEmailLogin + ";expires=" + vExpDate.toGMTString();
+        		  		document.cookie = "cPassLogin=" + vPassLogin + ";expires=" + vExpDate.toGMTString();
+        		  		alert("Permanent cookie")
+        		  		}
+        			}
+				top.MAIN.document.location.href = "loginok.htm"
+				}
+
+    }
+   else
+    {
+    alert('\t ' + "YOU ARE NOT IDENTIFIED AS A REGISTERED USER."+ '\r ' + '\r ' + "Please check email address and password provided or go to Registration page.")
+    document.loginFrm.txtEmailLogin.focus()
+    document.loginFrm.txtEmailLogin.select()
+    }
+
+	}
+//end hiding script-->
+</SCRIPT>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" background="images/bgr2.gif" onLoad="rotate(); document.loginFrm.txtEmailLogin.focus();">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="top" background="images/topbgr.gif">
+  <tr>
+    <td width="50%" valign="middle" class="top">
+    <img border="0" src="images/moto.gif" width="468" height="60" alt="Your Ultimate Online Garage Sale">
+    </td>
+    <td width="50%" valign="middle" align="right">
+    <table border="0" cellspacing="0" cellpadding="5"><tr>
+     <td align="center" nowrap>
+     <a href="login.htm" class="topmenu">
+     <img border="0" src="images/icosign.gif" width="32" height="25" alt="Login">
+     <br>Login</a>
+    </td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+      <a href="register.htm" class="topmenu">
+      <img border="0" src="images/icoacnt.gif" width="32" height="25" alt="Register">
+      <br>Register</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="JavaScript:top.HIDDEN.viewCart();" class="topmenu">
+     <img border="0" src="images/icocart.gif" width="32" height="25" alt="View Cart">
+     <br>View Cart</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="admin.htm" class="topmenu">
+    <img border="0" src="images/icoserv.gif" width="32" height="25" alt="Admin">
+    <br>Admin</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    </tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" class="top" colspan="4" background="images/bgr1.gif">&nbsp;</td>
+  </tr>
+</table>
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="19%" valign="top"><a href="main.htm">
+    <img border="0" src="images/logo.gif" width="120" height="120" alt="JunkPunk Logo"></a>
+
+ <!---------- Side menu starts here ---------------------->
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+          <a href="order_home.htm" onMouseOver="over('home');" onMouseOut="out('home')">
+          <img border="0" src="images/homeout.gif" alt="Home Junk" width="140" height="20" name="home"></a>
+          <br>
+          <a href="order_office.htm" onMouseOver="over('office');" onMouseOut="out('office')">
+          <img border="0" src="images/officeout.gif" alt="Office Junk" width="140" height="20" name="office"></a>
+          <br>
+          <a href="order_techno.htm" onMouseOver="over('techno');" onMouseOut="out('techno')">
+          <img border="0" src="images/technoout.gif" alt="Techno Junk" width="140" height="20" name="techno"></a>
+          <br>
+          <a href="order_season.htm" onMouseOver="over('season');" onMouseOut="out('season')">
+          <img border="0" src="images/seasonout.gif" alt="Seasonl Junk" width="140" height="20" name="season"></a>
+          <br>
+          </td>
+        </tr>
+      </table>
+<!---------- END Side menu code ---------------------->
+    </td>
+    <td width="81%" valign="top">
+    <img border="0" src="images/px.gif" width="20" height="20">
+
+<!---------------- END page header ------------------------>
+
+<!------------- Page contents start here ------------------>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" align="right"  bgcolor="#CCFF99">
+	<tr>
+		<td width="100%" class="regHead">
+			<img border="0" src="images/px.gif" width="20" height="15">
+			Login to Your Account
+      </td>
+     </tr>
+   </table>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="0" width="90%" border="0" align="right">
+	<tr valign="top">
+		<td>
+		<form name="loginFrm">
+			<span class="regField">Email</span><br><input name="txtEmailLogin" type="text" size="25" value="johnsmith@yahoo.com"><br>
+			<span class="regField">Password</span><br><input name="txtPassLogin" type="password" size="15" value="12345"><br>
+          <p><input type="button" value="Submit" name="Submit" class="btn" onClick="setLoginCookie()">     <input type="reset" class="btn" value="Clear"></p>
+          <p><input type="checkbox" name="chkRemPass"> <span class="regField">Remember my login info</span></p>
+          <p>Not registered? Go to <a href="register.htm" class="cartlink"> Registration page</a>.</p>
+          </form>
+		</td>
+	</tr>
+</table>
+
+<br>
+<br>
+<!------------- END page content ------------------>
+
+<!---------------- Page footer starts here ------------------------>
+
+   </td>
+  </tr>
+</table>
+<div>
+
+</div>
+<br><br><br><br><br>
+<p align="center"><a href="javascript:newLocation()" class="cartlink"><img border="0" src="images/ban_waterwrox.gif" name="adBanner" width="468" height="60"><br>Visit other WWW181 projects</a></p>
+
+<br><br><br>
+
+
+<!-- Last updated code start here -->
+
+<SCRIPT LANGUAGE="JavaScript" src="lastupdate.js"></SCRIPT>
+
+<!-- END Last updated -->
+</body>
+
+</html>
+<!---------------- END Page footer ------------------------>

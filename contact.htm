@@ -1,0 +1,327 @@
+<!--------------- Page header starts here ------------------->
+<html>
+
+<head>
+
+<title>JunkPunk Store - Welcome!</title>
+<link rel="stylesheet" type="text/css" href="jpstl.css">
+
+<!------------------ Rollover code starts here ---------------------->
+<script language="JavaScript" type="text/javascript">
+<!--
+if (document.images)
+{
+homeout= new Image();
+homeout.src = "images/homeout.gif";
+homeover = new Image();
+homeover.src = "images/homeover.gif";
+
+officeout= new Image();
+officeout.src = "images/officeout.gif";
+officeover = new Image();
+officeover.src = "images/officeover.gif";
+
+technoout= new Image();
+technoout.src = "images/technoout.gif";
+technoover = new Image();
+technoover.src = "images/technoover.gif";
+
+seasonout= new Image();
+seasonout.src = "images/seasonout.gif";
+seasonover = new Image();
+seasonover.src = "images/seasonover.gif";
+}
+
+function over(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "over.src");
+	}
+
+function out(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "out.src");
+	}
+
+// -->
+</script>
+<!------------------------ END Rollover code ------------------------------->
+
+<!-- Banner ad code stars here -->
+
+<SCRIPT language="javascript" SRC="bannerad.js"></SCRIPT>
+
+<!-- END banner ad code -->
+
+<SCRIPT language="javascript" type="text/javascript">
+<!--Hide script from older browsers
+
+function validForm(contactFrm) 
+	{
+	
+////////////////CHECK SELECTED RECIPIENT ////////////
+var vTo = contactFrm.To.options[contactFrm.To.selectedIndex].value
+
+	//check that the selection was made
+	if (vTo == "") 
+   	{
+		alert("Please select your recipient.")
+		contactFrm.To.focus()
+		return false
+		}
+
+///////////////END CHECKING RECIPIENT///////////////	
+	
+///////////////////CHECK NAME //////////////////////
+
+	// Check if a name was entered
+
+	if (contactFrm.Name.value == "") 
+		{
+		alert("You must enter a name.")
+		contactFrm.Name.focus()
+		return false
+		}
+	
+	//check that the name is in the right format - 
+	//two or three words with the first letters in upper case
+	
+	//check for a first black space
+	var findFirstBlank = contactFrm.Name.value.indexOf(" ",0)
+
+    if (findFirstBlank == -1)
+    	{ 
+		alert("You must enter a first and last name separated by a space.") 
+		contactFrm.Name.focus()
+		contactFrm.Name.select()
+		return false 
+		}
+    
+    //check for second blank space
+	if (contactFrm.Name.value.indexOf(" ",findFirstBlank+1) > -1) 
+		{ 
+		var re = /^(\S)(\S+)\s(\S)(\S+)\s(\S)(\S+)$/ 
+
+		re.exec(contactFrm.Name.value)
+		var NameNew = RegExp.$1.toUpperCase() + RegExp.$2.toLowerCase() + " " + RegExp.$3.toUpperCase() + RegExp.$4.toLowerCase() + " " + RegExp.$5.toUpperCase() + RegExp.$6.toLowerCase()
+		contactFrm.Name.value = NameNew
+		}
+	//if there is no second blank space it means that the name consist of 2 words		
+   else
+   		{
+		var re = /^(\S)(\S+)\s(\S)(\S+)$/
+
+			if (re.exec(contactFrm.Name.value)) 
+				{
+				NameNew = RegExp.$1.toUpperCase() + RegExp.$2.toLowerCase() + " " + RegExp.$3.toUpperCase() + RegExp.$4.toLowerCase()
+				contactFrm.Name.value = NameNew
+				}
+   
+			else 
+				{
+				alert("Please enter your first and last name.")
+				contactFrm.Name.focus()
+				contactFrm.Name.select()
+				return false
+				}
+		}		
+
+///////////////////END CHECKING NAME //////////////////////   
+
+///////////////////CHECK EMAIL //////////////////////
+
+//check that the field is not empty
+if(contactFrm.Email.value == "")
+  {
+  alert("Please enter your email address")
+  contactFrm.Email.focus()
+  return false
+  }
+
+//check the format
+
+	var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/   
+
+	if (!re.test(contactFrm.Email.value)) 
+		{
+		alert("E-mail address entered is invalid")
+    	contactFrm.Email.focus()
+    	contactFrm.Email.select()
+    	return false
+    	}
+///////////////////END CHECKING EMAIL //////////////////////
+
+///////////// CHECK MESSAGE ////////////////
+
+if(contactFrm.Message.value == "")
+  {
+  alert("Please enter your message")
+  contactFrm.Message.focus()
+  return false
+  }
+
+///////////// END CHECKING MESSAGE /////////////
+
+
+	}
+//end hiding script-->
+</SCRIPT>
+
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" background="images/bgr2.gif" onLoad="rotate();">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="top" background="images/topbgr.gif">
+  <tr>
+    <td width="50%" valign="middle" class="top">
+    <img border="0" src="images/moto.gif" width="468" height="60" alt="Your Ultimate Online Garage Sale">
+    </td>
+    <td width="50%" valign="middle" align="right">
+    <table border="0" cellspacing="0" cellpadding="5"><tr>
+     <td align="center" nowrap>
+     <a href="login.htm" class="topmenu">
+     <img border="0" src="images/icosign.gif" width="32" height="25" alt="Login">
+     <br>Login</a>
+    </td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+      <a href="register.htm" class="topmenu">
+      <img border="0" src="images/icoacnt.gif" width="32" height="25" alt="Register">
+      <br>Register</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="JavaScript:top.HIDDEN.viewCart();" class="topmenu">
+     <img border="0" src="images/icocart.gif" width="32" height="25" alt="View Cart">
+     <br>View Cart</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="admin.htm" class="topmenu">
+    <img border="0" src="images/icoserv.gif" width="32" height="25" alt="Admin">
+    <br>Admin</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    </tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" class="top" colspan="4" background="images/bgr1.gif">&nbsp;</td>
+  </tr>
+</table>
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="19%" valign="top"><a href="main.htm">
+    <img border="0" src="images/logo.gif" width="120" height="120" alt="JunkPunk Logo"></a>
+
+ <!---------- Side menu starts here ---------------------->
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+          <a href="order_home.htm" onMouseOver="over('home');" onMouseOut="out('home')">
+          <img border="0" src="images/homeout.gif" alt="Home Junk" width="140" height="20" name="home"></a>
+          <br>
+          <a href="order_office.htm" onMouseOver="over('office');" onMouseOut="out('office')">
+          <img border="0" src="images/officeout.gif" alt="Office Junk" width="140" height="20" name="office"></a>
+          <br>
+          <a href="order_techno.htm" onMouseOver="over('techno');" onMouseOut="out('techno')">
+          <img border="0" src="images/technoout.gif" alt="Techno Junk" width="140" height="20" name="techno"></a>
+          <br>
+          <a href="order_season.htm" onMouseOver="over('season');" onMouseOut="out('season')">
+          <img border="0" src="images/seasonout.gif" alt="Seasonl Junk" width="140" height="20" name="season"></a>
+          <br>
+          </td>
+        </tr>
+      </table>
+<!---------- END Side menu code ---------------------->
+    </td>
+    <td width="81%" valign="top">
+    <img border="0" src="images/px.gif" width="20" height="20">
+
+<!---------------- END page header ------------------------>
+
+<!------------- Page contents start here ------------------>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" align="right"  bgcolor="#CCFF99">
+	<tr>
+		<td width="100%" class="regHead">
+			<img border="0" src="images/px.gif" width="20" height="15">
+            Contact JunkPunk Store Team<br>
+      </td>
+     </tr>
+   </table>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<table cellspacing="0" cellpadding="0" width="90%" border="0" align="right">
+ <tr valign="top">
+  <td>
+  <h5><br>Contact via Email:</h5>Email Addresses of the project team:<br>
+  <a href="mailto:kise0179@oakton.edu" class="regular">Tatiana Kiseleva</a><br>
+  <a href="mailto:mars008@hotmail.com" class="regular">John Marshal</a><br>
+  <a href="mailto:student@ph-head.com" class="regular">Brandon India</a><br>
+  <br><img src="images/drkgreenpx.gif" width="450" height="1"><br>
+  
+  
+  <h5>Contact via Contact Form:</h5>
+  <form name="contact" method="post" action="http://www.linkrel.net/mail/contact_send.asp" onSubmit="return validForm(this)">
+  <input type="hidden" name="Redirect" value="http://www210.oakton.edu/projects/JunkPunkStore/contactok.htm">
+  <input type="hidden" name="Subject" value="Message from JunkPunk Store Contact Page">
+  <b>Message To...</b><br>
+  <select name="To" size="1">
+  <option selected value="">Select from the list...</option>
+  <option value="kiseta@yahoo.com;kiseta@kiseta.net">Tatiana Kiseleva</option>
+  <option value="mars008@hotmail.com">Jhon Marshal</option>
+  <option value="bindia@sbsystemsinc.com">Brandon India</option>
+  <option value="kiseta@yahoo.com;mars008@hotmail.com;bindia@sbsystemsinc.com">Entire Project Team</option>
+</select><br>
+    <br>
+    
+    <b>Your Full Name:</b><br>
+	<input type="text" name="Name" size="25"><span class="required">*</span><br><br>
+    <b>Your E-mail:</b><br>
+	<input type="text" name="Email" size="25"><span class="required">*</span><br><br>
+    <b>Your Message:</b><br>
+	<textarea name="Message" rows="8" cols="30"></textarea><span class="required">*</span><br><br>
+
+	<input type="submit" value="Submit" class="btn">     <input type="reset" class="btn" value="Clear">
+	<br><br>
+	<span class="required">*</span> - required field
+	</form>
+		</td>
+	</tr>
+</table>
+
+<br>
+<br>
+<!------------- END page content ------------------>
+
+<!---------------- Page footer starts here ------------------------>
+
+   </td>
+  </tr>
+</table>
+<div>
+
+</div>
+<br><br><br><br><br>
+<p align="center"><a href="javascript:newLocation()" class="cartlink"><img border="0" src="images/ban_waterwrox.gif" name="adBanner" width="468" height="60"><br>Visit other WWW181 projects</a></p>
+
+<br><br><br>
+
+
+<!-- Last updated code start here -->
+
+<SCRIPT LANGUAGE="JavaScript" src="lastupdate.js"></SCRIPT>
+
+<!-- END Last updated -->
+</body>
+
+</html>
+<!---------------- END Page footer ------------------------>

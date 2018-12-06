@@ -1,0 +1,368 @@
+<!--------------- Page header starts here ------------------->
+<html>
+
+<head>
+
+<title>JunkPunk Store - Welcome!</title>
+<link rel="stylesheet" type="text/css" href="jpstl.css">
+
+<!------------------ Rollover code starts here ---------------------->
+<script language="JavaScript" type="text/javascript">
+<!--
+if (document.images)
+{
+homeout= new Image();
+homeout.src = "images/homeout.gif";
+homeover = new Image();
+homeover.src = "images/homeover.gif";
+
+officeout= new Image();
+officeout.src = "images/officeout.gif";
+officeover = new Image();
+officeover.src = "images/officeover.gif";
+
+technoout= new Image();
+technoout.src = "images/technoout.gif";
+technoover = new Image();
+technoover.src = "images/technoover.gif";
+
+seasonout= new Image();
+seasonout.src = "images/seasonout.gif";
+seasonover = new Image();
+seasonover.src = "images/seasonover.gif";
+}
+
+function over(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "over.src");
+	}
+
+function out(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "out.src");
+	}
+
+// -->
+</script>
+<!------------------------ END Rollover code ------------------------------->
+
+<!---------------------- Pop up window code stars here ----------------------->
+<script language="JavaScript">
+
+ <!--
+
+ function openWin( windowURL, windowName, windowFeatures )
+ 		{
+ 		return window.open( windowURL, windowName, windowFeatures );
+ 		}
+
+ // -->
+
+</script>
+<!----------------- END Pop up window code --------------------->
+
+<!-- Banner ad code stars here -->
+
+<SCRIPT language="javascript" SRC="bannerad.js"></SCRIPT>
+
+<!-- END banner ad code -->
+
+
+
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" background="images/bgr.gif" onLoad="rotate();">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="top" background="images/topbgr.gif">
+  <tr>
+    <td width="50%" valign="middle" class="top">
+    <img border="0" src="images/moto.gif" width="468" height="60" alt="Your Ultimate Online Garage Sale">
+    </td>
+    <td width="50%" valign="middle" align="right">
+    <table border="0" cellspacing="0" cellpadding="5"><tr>
+     <td align="center" nowrap>
+     <a href="login.htm" class="topmenu">
+     <img border="0" src="images/icosign.gif" width="32" height="25" alt="Login">
+     <br>Login</a>
+    </td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+      <a href="register.htm" class="topmenu">
+      <img border="0" src="images/icoacnt.gif" width="32" height="25" alt="Register">
+      <br>Register</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="JavaScript:top.HIDDEN.viewCart();" class="topmenu">
+     <img border="0" src="images/icocart.gif" width="32" height="25" alt="View Cart">
+     <br>View Cart</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="admin.htm" class="topmenu">
+    <img border="0" src="images/icoserv.gif" width="32" height="25" alt="Admin">
+    <br>Admin</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    </tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" class="top" colspan="4" background="images/bgr1.gif">&nbsp;</td>
+  </tr>
+</table>
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="19%" valign="top"><a href="main.htm">
+    <img border="0" src="images/logo.gif" width="120" height="120" alt="JunkPunk Logo"></a>
+
+ <!---------- Side menu starts here ---------------------->
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+          <a href="order_home.htm" onMouseOver="over('home');" onMouseOut="out('home')">
+          <img border="0" src="images/homeout.gif" alt="Home Junk" width="140" height="20" name="home"></a>
+          <br>
+          <a href="order_office.htm" onMouseOver="over('office');" onMouseOut="out('office')">
+          <img border="0" src="images/officeout.gif" alt="Office Junk" width="140" height="20" name="office"></a>
+          <br>
+          <a href="order_techno.htm" onMouseOver="over('techno');" onMouseOut="out('techno')">
+          <img border="0" src="images/technoout.gif" alt="Techno Junk" width="140" height="20" name="techno"></a>
+          <br>
+          <a href="order_season.htm" onMouseOver="over('season');" onMouseOut="out('season')">
+          <img border="0" src="images/seasonout.gif" alt="Seasonl Junk" width="140" height="20" name="season"></a>
+          <br>
+          </td>
+        </tr>
+      </table>
+<!---------- END Side menu code ---------------------->
+    </td>
+    <td width="81%" valign="top">
+    <img border="0" src="images/px.gif" width="20" height="20">
+
+<!---------------- END page header ------------------------>
+
+<!------------- Page contents start here ------------------>
+
+<table border="0" width="95%" cellspacing="0" cellpadding="0" align="right">
+	<tr>
+		<td width="100%" class="mainHead">Registration Successful!<br><br></td>
+	</tr>
+	<tr>
+		<td>
+       Here is your registration info:
+       <SCRIPT language="javascript" type="text/javascript">
+<!--Hide script from older browsers
+
+var allCookies = document.cookie
+
+if (allCookies!="")
+	{
+	//get Name cookie value
+	var cNamePos = allCookies.indexOf("cName=")
+	var start = cNamePos + 6
+	var end = allCookies.indexOf(";", start)
+	if (end == -1)
+		{
+		end = allCookies.length
+		}
+
+	var cName2 = allCookies.substring(start, end)
+
+			//get Address cookie value
+			var cAddressPos = allCookies.indexOf("cAddress=")
+			var start = cAddressPos + 9
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cAddress2 = allCookies.substring(start, end)
+
+			//get City cookie value
+			var cCityPos = allCookies.indexOf("cCity=")
+			var start = cCityPos + 6
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cCity2 = allCookies.substring(start, end)
+
+			//get State cookie value
+			var cStatePos = allCookies.indexOf("cState=")
+			var start = cStatePos + 7
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cState2 = allCookies.substring(start, end)
+
+			//get Zip code cookie value
+			var cZipPos = allCookies.indexOf("cZip=")
+			var start = cZipPos + 5
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cZip2 = allCookies.substring(start, end)
+
+
+			//get Email cookie value
+			var cEmailPos = allCookies.indexOf("cEmail=")
+			var start = cEmailPos + 7
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cEmail2 = allCookies.substring(start, end)
+
+			//get Password cookie value
+			var cPassPos = allCookies.indexOf("cPass=")
+			var start = cPassPos + 6
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cPass2 = allCookies.substring(start, end)
+
+			//get CardType cookie value
+			var cCardTypePos = allCookies.indexOf("cCardType=")
+			var start = cCardTypePos + 10
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cCardType2 = allCookies.substring(start, end)
+
+			//get Card number cookie value
+			var cCardNumPos = allCookies.indexOf("cCardNum=")
+			var start = cCardNumPos + 9
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cCardNum2 = allCookies.substring(start, end)
+
+			//get Expiration Month cookie value
+			var cExpMonthPos = allCookies.indexOf("cExpMonth=")
+			var start = cExpMonthPos + 10
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cExpMonth2 = allCookies.substring(start, end)
+			
+			//display month
+
+			var vMonth = new Array(11);
+      vMonth [0] =  "January"
+      vMonth [1] =  "February"
+      vMonth [2] =  "March"
+      vMonth [3] =  "April"
+      vMonth [4] =  "May"
+      vMonth [5] =  "June"
+      vMonth [6] =  "July"
+      vMonth [7] =  "August"
+      vMonth [8] =  "September"
+      vMonth [9] =  "October"
+      vMonth [10] =  "November"
+      vMonth [11] =  "December"
+      
+      for(ctr = 0; ctr < vMonth.length; ctr++)
+        {
+        if (cExpMonth2 == ctr)
+          {  
+          var vMonthDisplay = vMonth[ctr-1]
+          break;
+          }
+        } 
+
+			//get Expiration Year cookie value
+			var cExpYearPos = allCookies.indexOf("cExpYear=")
+			var start = cExpYearPos + 9
+			var end = allCookies.indexOf(";", start)
+			if (end == -1)
+				{
+				end = allCookies.length
+				}
+
+			var cExpYear2 = allCookies.substring(start, end)
+ 
+      
+	//write values to the page
+	document.write("<h5>Billing Information:<\/h5>")
+	document.write(cName2 + "<br>");
+	document.write(cAddress2 + "<br>");
+	document.write(cCity2 + ", " + cState2 + " " + cZip2 + "<br><br>");
+
+	document.write("Credit Card: "+ cCardType2 + " #" + cCardNum2 +"<br>");
+	document.write("Expires: "+ vMonthDisplay + ", " + cExpYear2 + "<br><br>");
+
+	document.write("<h5>Login Information:<\/h5>")
+	document.write("Login Name: "+ cEmail2 + "<br>");
+	document.write("Password: "+ cPass2 + "<br>");
+
+}
+
+
+//end hiding script-->
+</SCRIPT>
+<br><br>
+		</td>
+	</tr>
+		<tr>
+		<td>
+        <a href="javascript:top.HIDDEN.checkOut();" class="cartlink">Proceeded to checkout</a>
+		</td>
+	</tr>
+</table>
+</form>
+<br>
+<br>
+<br>
+<br>
+<!------------- END page content ------------------>
+
+<!---------------- Page footer starts here ------------------------>
+
+   </td>
+  </tr>
+</table>
+<div>
+
+</div>
+<br><br><br><br><br>
+<p align="center"><a href="javascript:newLocation()" class="cartlink"><img border="0" src="images/ban_waterwrox.gif" name="adBanner" width="468" height="60"><br>Visit other WWW181 projects</a></p>
+
+<br><br><br>
+
+
+<!-- Last updated code start here -->
+
+<SCRIPT LANGUAGE="JavaScript" src="lastupdate.js"></SCRIPT>
+
+<!-- END Last updated -->
+</body>
+
+</html>
+<!---------------- END Page footer ------------------------>

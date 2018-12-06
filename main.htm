@@ -1,0 +1,387 @@
+<!--------------- Page header starts here ------------------->
+<html>
+
+<head>
+
+<title>JunkPunk Store - Welcome!</title>
+<link rel="stylesheet" type="text/css" href="jpstl.css">
+
+<!------------------ Rollover code starts here ---------------------->
+<script language="JavaScript" type="text/javascript">
+<!--
+if (document.images)
+{
+homeout= new Image();
+homeout.src = "images/homeout.gif";
+homeover = new Image();
+homeover.src = "images/homeover.gif";
+
+officeout= new Image();
+officeout.src = "images/officeout.gif";
+officeover = new Image();
+officeover.src = "images/officeover.gif";
+
+technoout= new Image();
+technoout.src = "images/technoout.gif";
+technoover = new Image();
+technoover.src = "images/technoover.gif";
+
+seasonout= new Image();
+seasonout.src = "images/seasonout.gif";
+seasonover = new Image();
+seasonover.src = "images/seasonover.gif";
+}
+
+function over(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "over.src");
+	}
+
+function out(name)
+	{
+	if (document.images)
+        document[name].src = eval(name + "out.src");
+	}
+
+// -->
+</script>
+<!------------------------ END Rollover code ------------------------------->
+
+
+
+<!-- Banner ad code stars here -->
+
+<SCRIPT language="javascript" SRC="bannerad.js"></SCRIPT>
+
+<!-- END banner ad code -->
+
+
+<!-- Image rotation code stars here -->
+
+<SCRIPT LANGUAGE=JAVASCRIPT SRC="imgrotate.js"></SCRIPT>
+
+<!-- END Image rotation -->
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function getPersonal()
+  {
+  //get data from the text box
+  var vUser = document.userFrm.txtUser.value
+  
+  //validate user input
+  //--------------- Validate Name ---------------------
+  // Check if a name was entered
+
+	if (vUser == "") 
+		{
+		alert("You must enter a name.")
+		document.userFrm.txtUser.focus()
+		return false
+		}
+	
+	//check that the name is in right format - 
+	//two or three words with the first letters in upper case
+	
+	//check for a first black space
+	var findFirstBlank = vUser.indexOf(" ",0)
+
+    if (findFirstBlank == -1)
+    	{ 
+		alert("You must enter a first and last name separated by a space.") 
+		document.userFrm.txtUser.focus()
+		document.userFrm.txtUser.select()
+		return false 
+		}
+    
+    //check for second blank space
+	if (vUser.indexOf(" ",findFirstBlank+1) > -1) 
+		{ 
+		var re = /^(\S)(\S+)\s(\S)(\S+)\s(\S)(\S+)$/ 
+
+		re.exec(vUser)
+		var vUserNew = RegExp.$1.toUpperCase() + RegExp.$2.toLowerCase() + " " + RegExp.$3.toUpperCase() + RegExp.$4.toLowerCase() + " " + RegExp.$5.toUpperCase() + RegExp.$6.toLowerCase()
+		document.userFrm.txtUser.value = vUserNew
+		}
+	//if there is no second blank space it means that the name consist of 2 words		
+   else
+   		{
+		var re = /^(\S)(\S+)\s(\S)(\S+)$/
+
+			if (re.exec(vUser)) 
+				{
+				vUserNew = RegExp.$1.toUpperCase() + RegExp.$2.toLowerCase() + " " + RegExp.$3.toUpperCase() + RegExp.$4.toLowerCase()
+				document.userFrm.txtUser.value = vUserNew
+				}
+   
+			else 
+				{
+				alert("Please enter your first and last name.")
+				document.userFrm.txtUser.focus()
+				document.userFrm.txtUser.select()
+				return false
+				}
+		}	
+  //----------------- END Name Validation -------------
+  
+  
+  //create a cookie
+  alert("Thank you " + vUserNew + " for submitting your name!")
+  document.cookie = "cUser=" + vUserNew;
+  alert("User Cookie Created");
+  
+  location.reload()
+  location.reload()
+  
+  }
+
+// -->
+</script>
+
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0" background="images/bgr.gif" onLoad="rotate(); rotateImg1(); document.userFrm.txtUser.focus();">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" class="top" background="images/topbgr.gif">
+  <tr>
+    <td width="50%" valign="middle" class="top">
+    <img border="0" src="images/moto.gif" width="468" height="60" alt="Your Ultimate Online Garage Sale">
+    </td>
+    <td width="50%" valign="middle" align="right">
+    <table border="0" cellspacing="0" cellpadding="5"><tr>
+     <td align="center" nowrap>
+     <a href="login.htm" class="topmenu">
+     <img border="0" src="images/icosign.gif" width="32" height="25" alt="Login">
+     <br>Login</a>
+    </td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+      <a href="register.htm" class="topmenu">
+      <img border="0" src="images/icoacnt.gif" width="32" height="25" alt="Register">
+      <br>Register</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="JavaScript:top.HIDDEN.viewCart();" class="topmenu">
+     <img border="0" src="images/icocart.gif" width="32" height="25" alt="View Cart">
+     <br>View Cart</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    <td align="center" nowrap>
+    <a href="admin.htm" class="topmenu">
+    <img border="0" src="images/icoserv.gif" width="32" height="25" alt="Admin">
+    <br>Admin</a></td>
+    <td align="center" nowrap>&nbsp;</td>
+    </tr></table>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" valign="middle" class="top" colspan="4" background="images/bgr1.gif">&nbsp;</td>
+  </tr>
+</table>
+
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="19%" valign="top"><a href="main.htm">
+    <img border="0" src="images/logo.gif" width="120" height="120" alt="JunkPunk Logo"></a>
+
+ <!---------- Side menu starts here ---------------------->
+      <table border="0" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>
+          <a href="order_home.htm" onMouseOver="over('home');" onMouseOut="out('home')">
+          <img border="0" src="images/homeout.gif" alt="Home Junk" width="140" height="20" name="home"></a>
+          <br>
+          <a href="order_office.htm" onMouseOver="over('office');" onMouseOut="out('office')">
+          <img border="0" src="images/officeout.gif" alt="Office Junk" width="140" height="20" name="office"></a>
+          <br>
+          <a href="order_techno.htm" onMouseOver="over('techno');" onMouseOut="out('techno')">
+          <img border="0" src="images/technoout.gif" alt="Techno Junk" width="140" height="20" name="techno"></a>
+          <br>
+          <a href="order_season.htm" onMouseOver="over('season');" onMouseOut="out('season')">
+          <img border="0" src="images/seasonout.gif" alt="Seasonl Junk" width="140" height="20" name="season"></a>
+          <br>
+          </td>
+        </tr>
+      </table>
+<!---------- END Side menu code ---------------------->
+    </td>
+    <td width="81%" valign="top">
+    <img border="0" src="images/px.gif" width="20" height="20">
+
+<!---------------- END page header ------------------------>
+
+<!------------- Page contents start here ------------------>
+<form name="userFrm">
+<table border="0" width="95%" cellspacing="0" cellpadding="0" align="right">
+	<tr>
+		<td width="100%" class="mainHead">
+		<SCRIPT LANGUAGE=JAVASCRIPT SRC="name.js"></SCRIPT>Welcome to the JunkPunk Online Store<br><br></td>
+	</tr>
+	<tr>
+		<td>
+			<table border="0" width=100% cellpadding="0" cellspacing="0">
+				<tr valign=top>
+      			<td width="75%" valign="top">
+      			<img border="0" src="images/px.gif" width="1" height="1"></td>
+      			<td width="1" valign="top" bgcolor="#009900">
+                <img border="0" src="images/px.gif" width="1"  height="1"></td>
+      			<td width="25%" valign="top" bgcolor="#009900" align="center">
+      			<img border="0" src="images/px.gif" width="1" height="1"></td>
+   			</tr>
+				<tr valign=top>
+      			<td width="75%" valign="top">
+      			 <SCRIPT LANGUAGE=JAVASCRIPT SRC="datestamp.js"></SCRIPT> <br>
+<br> The JunkPunk, an online store implemented solely with JavaScript, is a final project for WWW 181 - JavaScript Client Scripting class at <a href="http://www.oakton.edu" class="regular" target="_blank">Oakton Community College</a>.
+<br>
+<br>
+The project is organized around a fictional store selling garage sale items called JunkPunk and demonstrates how JavaScript can be used to set up a shopping cart.
+<br>
+<br>
+<h6>The project demonstrates the following application of JavaScript:</h6>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15"><b>JavaScript Enhanced Images</b><br>
+<ul>
+<li>Rollovers</li>
+<li>Banner Ads</li>
+<li>Rotating Images</li>
+</ul>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15"><b>Form Validation</b><br>
+<ul>
+<li>Registration Form</li>
+<li>Login Form</li>
+<li>User Name Form</li>
+<li>Contact Form</li>
+</ul>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15"><b>Customized Shopping Cart</b><br>
+<ul>
+<li>Objects</li>
+<li>Functions</li>
+<li>Cookies</li>
+<li>Calculations</li>
+</ul>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15"><b>Other scripts</b><br>
+<ul>
+<li>Date Stamp</li>
+<li>Date Last Modified</li>
+<li>Pop Up Windows</li>
+<ul>
+<br>
+<h6>The project navigation scheme is presented on the following diagram:</h6>
+                 <img border="0" src="images/nav.gif" width="359" height="445">
+                <p>A HIDDEN frame is the area of a Web Site that contains
+                JavaScript code which can be accessed from multiple Web
+                pages within a Web site. The hidden frame size is set to zero which
+                makes it invisible for the user. As long as the browser window remains
+                open the data remains intact in the hidden frame as the user
+                navigate a Web Site.</p>
+               
+                <p>JavaScript shopping cart code consist of the ShoppingCart object and several functions that allow user to:<br>
+                <img border="0" src="images/arrow_y.gif" width="15"  height="15">Add item to a shopping cart - <span style="color:#006600;">&quot;javascript:top.HIDDEN.addtoCart('Yellow Mug', 1.99)&quot;</span><br>
+                <img border="0" src="images/arrow_y.gif" width="15"  height="15">View shopping cart - <span style="color:#006600;">&quot;javascript:top.HIDDEN.viewCart();&quot;</span><br>
+                <img border="0" src="images/arrow_y.gif" width="15"  height="15">Delete items from shopping cart - <span style="color:#006600;">&quot;javascript:top.HIDDEN.deleteItem(0)&quot;</span><br>
+                <img border="0" src="images/arrow_y.gif" width="15"  height="15">Do a final checkout  - <span style="color:#006600;">&quot;javascript:top.HIDDEN.checkOut();&quot;</span><br>
+                <img border="0" src="images/px.gif" width="25"  height="1">Checks if the user has logged in by checking cookies<br>
+                <img border="0" src="images/px.gif" width="25"  height="1">Offers to login or register<br>
+                <img border="0" src="images/arrow_y.gif" width="15"  height="15">Display a final checkout page listing user details read in a cookie file and list of items added to a shopping cart with calculated total, tax and grand total.</p>
+                
+                 <p>A MAIN frame contains html pages with <b><span class="required">Add to shopping cart</span></b> links for each of the items in the page. This links execute the addtoCart(); function when the user clicks one of them. The addtoCart(); finction accepts parameters for the item desctiption and the item price.</p>
+                 <h6>To see how the shopping cart works:</h6>
+                 <img border="0" src="images/arrow_y.gif" width="15"  height="15">Visit our merchandize section by clicking buttons at left.<br>
+                 <img border="0" src="images/arrow_y.gif" width="15"  height="15">Click <b><span class="required">Add to shopping cart</span></b> links to add some items to your shopping cart<br>
+                 <img border="0" src="images/arrow_y.gif" width="15"  height="15">Click <b><span style="color:#FFCC00;">View Cart</span></b> icon in the top right corner of the page to view the list of items in your shopping cart<br>
+                 <img border="0" src="images/px.gif" width="20"  height="1">and calculated taxes and total amount due for you purchase.<br>
+                 <img border="0" src="images/arrow_y.gif" width="15"  height="15">On the Shoping Cart page click <b><span class="required">Proceed to checkout</span></b> link.<br>
+                 <img border="0" src="images/px.gif" width="20"  height="1">Note that if you have not logged on you will be redirected to a login page.<br>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15">On the Login page enter your email and password and see if you are able to login.<br>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15">If you are offered to register go to Registration page and register.<br>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15">On a registration confirmation page click <b><span class="required">Proceed to checkout</span></b> link.<br>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15">Login using email and pass provided during registration.<br>
+<img border="0" src="images/arrow_y.gif" width="15"  height="15">Dispaly final checkout page.<br>
+<h6>Additional Features</h6>
+ <img border="0" src="images/arrow_y.gif" width="15"  height="15">Personalize your stay on a website by submitting your name on a first page.<br>      
+<br>
+Enjoy your stay.
+<br>
+
+<i>-- JunkPunk Store <a href="contact.htm" class="contact">Team</a> </i>
+      			</td>
+      			<td width="1" valign="top" bgcolor="#ffffcc">
+      			<img border="0" src="images/greenpx.gif" width="1" height="1500"></td>
+      			<td width="25%" valign="top" bgcolor="#ffffcc" align="center">
+
+<table cellSpacing="0" cellPadding="0" width="150" border="1">
+	<tr>
+		<td><br>Personalize your JunkPunk Store experience:</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+		<table cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tr>
+				<td><b>Your Full Name:</b><br>
+				<input type="text" size="15" name="txtUser"></td>
+			</tr>
+		</table>
+      </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+		<input id="Submit" type="button" value="Submit" name="Register" class="btn" onClick="getPersonal()">
+      </td>
+	</tr>
+	</table>
+	<br>	<br>
+
+	<span class="title"><a href="order_season.htm" class="title">Season Specials:</span><br>
+	<img border="0" src="images/season02.gif" width="104" height="104" name="imgSpin1"></a><a>
+
+</a>
+
+      			</td>
+   			</tr>
+				<tr valign=top>
+      			<td width="70%" valign="top" >
+      			<img border="0" src="images/px.gif" width="1" height="1"></td>
+      			<td width="1" valign="top" bgcolor="#009900">
+                <img border="0" src="images/px.gif" width="1"  height="1"></td>
+      			<td width="30%" valign="top" bgcolor="#009900" align="center">
+      			<img border="0" src="images/px.gif" width="1" height="1"></td>
+   			</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</form>
+<!------------- END page content ------------------>
+
+<!---------------- Page footer starts here ------------------------>
+
+   </td>
+  </tr>
+</table>
+<div>
+
+</div>
+<br><br><br><br><br>
+<p align="center"><a href="javascript:newLocation()" class="cartlink"><img border="0" src="images/ban_waterwrox.gif" name="adBanner" width="468" height="60"><br>Visit other WWW181 projects</a></p>
+
+<br><br><br>
+
+
+<!-- Last updated code start here -->
+
+<SCRIPT LANGUAGE="JavaScript" src="lastupdate.js"></SCRIPT>
+
+<!-- END Last updated -->
+</body>
+
+</html>
+<!---------------- END Page footer ------------------------>

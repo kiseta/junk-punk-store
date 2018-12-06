@@ -1,0 +1,343 @@
+<html>
+<head>
+<title></title>
+
+<script language="JavaScript" type="text/javascript">
+<!--Hide script from older browsers
+
+    var numItems = 0
+    var ShoppingCart = new Object
+
+    function addItem(Description, Price, ItemNum)
+		{
+		this.Description = Description
+		this.Price = Price
+		this.ItemNum = ItemNum
+		this.display = printItem
+		this.displayOrder = printItemOrder
+		return this
+		}
+
+    function addtoCart(Description, Price)
+		{
+		ShoppingCart[numItems] = new addItem(Description, Price, numItems)
+		numItems = numItems + 1
+		alert(Description + " has been added to your shopping cart.")
+		}
+
+    function deleteItem(ItemNum)
+		{
+		delete ShoppingCart[ItemNum]
+		viewCart()
+		}
+
+function printItem(deleteFlag, TargetDocument)
+	{
+	with(TargetDocument)
+		{
+		write("<TR class='CartListItem'><TD width='40%'>" + this.Description + "</td>")
+		write("<TD width='30%' align='right'>$" + this.Price + "</td>")
+		write("<TD width='30%' nowrap>")
+			if (deleteFlag = true)
+				{
+				write("<a href='JavaScript:top.HIDDEN.deleteItem(" + this.ItemNum + ")' class='cartlink'>")
+				write("Remove from Cart</a>")
+				}
+			else (deleteFlag = false)
+				{
+				write("&nbsp;")
+				}
+		write("</td></tr>")
+		}
+	}
+
+function printItemOrder(TargetDocument)
+	{
+	with(TargetDocument)
+		{
+		write("<TR class='CartListItem'><TD width='40%'>" + this.Description + "</td>")
+		write("<TD width='30%' align='right'>$" + this.Price + "</td></tr>")
+		}
+	}
+
+function viewCart()
+	{
+   if(numItems == 0)
+    {
+    alert('\t ' + "YOUR SHOPPING CART IS EMPTY." + '\r ' + '\r' + "Please visit our merchandise section by clicking buttons at left.")
+    }
+  else
+    {  
+  	var cartTotal = 0
+  
+  	with (top.MAIN.document)
+  		{
+  		write()
+  		close()
+  		write("<html><head><title>Shopping Cart</title>")
+  		write("<link rel='stylesheet' type='text/css' href='jpstl.css'>")
+  		write("</head><body leftmargin='0' topmargin='0' rightmargin='0' bottommargin='0'")
+  		write("marginheight='0' marginwidth='0' background='images/bgr2.gif'>")
+  		write("<table border='0' width='100%' cellspacing='0' cellpadding='0'>")
+  		write("<tr><td width='20%' valign='top'><br><br>")
+  		write("<a href='main.htm'>")
+  		write("<img border='0' src='images/logo.gif' width='120' height='120'></a></td>")
+  		write("<td  width='80%' align='right' valign='top'><br><br><br>")
+  		write("<table border='0' width='95%' cellspacing='0' cellpadding='0' bgcolor='#CCFF99'>")
+  		write("<tr><td width='100%' class='cartHead'>")
+  		write("<img border='0' src='images/px.gif' width='20' height='15'>")
+  		write("Shopping cart</td></tr></table><br><br><br><br>")
+  		write("<table borderColor='#000000' cellSpacing=0 cellPadding=4 border='1' width='80%'>")
+  		write("<tr class=CartListHead><TD width='40%' nowrap><b>Product Name</b></td>")
+  		write("<td width='30%' nowrap><b>Price</b> </td>")
+  		write("<td width='30%' nowrap><b>Remove</b> </td></tr>")
+  
+  		for (i in ShoppingCart)
+  			{
+  			cartTotal = cartTotal + ShoppingCart[i].Price
+  			if (ShoppingCart[i].ItemNum != null)
+  				ShoppingCart[i].display(true, top.MAIN.document)
+  			}
+  		write("<TR><TD width='40%'><b>Total:</b></TD>")
+  		write("<TD width='30%' align='right'><b>$" + cartTotal + "</b></TD>")
+  		write("<TD width='30%'>&nbsp; </TD>")
+  
+  		var salesTax = cartTotal * .0875
+  
+  		write("<TR><TD width='40%'><b>Sales Tax:</b></TD>")
+  		write("<TD width='30%' align='right'><b>$" + Math.round(salesTax*100)/100  + "</b></TD>")
+  		write("<TD width='30%'>&nbsp; </TD>")
+  
+  		var grandTotal = cartTotal + salesTax
+  
+  		write("<TR><TD width='40%'><b>Grand Total:</b></TD>")
+  		write("<TD width='30%' align='right'><b>$" + Math.round(grandTotal*100)/100  + "</b></TD>")
+  		write("<TD width='30%'>&nbsp; </TD>")
+  
+  		write("<TR class=CartListFooter><TD width='40%'>&nbsp; </TD>")
+  		write("<TD width='30%'>&nbsp; </TD>")
+  		write("<TD width='30%'>&nbsp; </TD></TR></TABLE>")
+  		write("<div align='center'")
+  		write("<br><br><A HREF='JavaScript:top.HIDDEN.goBack();' class='cartlink'>Return to Order Page</a>")
+  		write("<img border='0' src='images/px.gif' width='20' height='15'>")
+  		write("<A HREF='JavaScript:top.HIDDEN.checkOut();' class='cartlink'>Proceed to checkout</A>")
+  		write("</div></td></tr></table><br></body></html>")
+  		}
+  	}	
+	}
+
+function goBack()
+	{
+	top.MAIN.history.go(-2)
+    }
+
+function checkOut()
+	{
+	  if(numItems == 0)
+      {
+      alert('\t ' + "YOUR SHOPPING CART IS EMPTY." + '\r ' + '\r' + "Please visit our merchandise section by clicking buttons at left.")
+      }
+    else
+        { 
+      	var cartTotal = 0
+      	var allCookies=document.cookie
+      	
+      	//check if the user is registered
+      		var vLoggedIn = allCookies.indexOf("cEmailLogin")
+      		alert(vLoggedIn)
+      		if (vLoggedIn == -1)
+      			{
+      			alert("Please login")
+      			top.MAIN.location.href="login.htm"
+      			return false
+      			}
+      		else
+      			{
+      			//read cookie file
+      			//get Name cookie value
+      			var cNamePos = allCookies.indexOf("cName=")
+      			var start = cNamePos + 6
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cName2 = allCookies.substring(start, end)
+      			alert(cName2)
+      			//get Address cookie value
+      			var cAddressPos = allCookies.indexOf("cAddress=")
+      			var start = cAddressPos + 9
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cAddress2 = allCookies.substring(start, end)
+      
+      			//get City cookie value
+      			var cCityPos = allCookies.indexOf("cCity=")
+      			var start = cCityPos + 6
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cCity2 = allCookies.substring(start, end)
+      
+      			//get State cookie value
+      			var cStatePos = allCookies.indexOf("cState=")
+      			var start = cStatePos + 7
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cState2 = allCookies.substring(start, end)
+      
+      			//get Zip code cookie value
+      			var cZipPos = allCookies.indexOf("cZip=")
+      			var start = cZipPos + 5
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cZip2 = allCookies.substring(start, end)
+      
+      			//get CardType cookie value
+      			var cCardTypePos = allCookies.indexOf("cCardType=")
+      			var start = cCardTypePos + 10
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cCardType2 = allCookies.substring(start, end)
+      
+      			//get Card number cookie value
+      			var cCardNumPos = allCookies.indexOf("cCardNum=")
+      			var start = cCardNumPos + 9
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cCardNum2 = allCookies.substring(start, end)
+      
+      			//get Expiration Month cookie value
+      			var cExpMonthPos = allCookies.indexOf("cExpMonth=")
+      			var start = cExpMonthPos + 10
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cExpMonth2 = allCookies.substring(start, end)
+      			
+      			//display month
+      			var vMonth = new Array(11);
+            vMonth [0] =  "January"
+            vMonth [1] =  "February"
+            vMonth [2] =  "March"
+            vMonth [3] =  "April"
+            vMonth [4] =  "May"
+            vMonth [5] =  "June"
+            vMonth [6] =  "July"
+            vMonth [7] =  "August"
+            vMonth [8] =  "September"
+            vMonth [9] =  "October"
+            vMonth [10] =  "November"
+            vMonth [11] =  "December"
+            
+            for(ctr = 0; ctr < vMonth.length; ctr++)
+              {
+              if (cExpMonth2 == ctr)
+                {  
+                var vMonthDisplay = vMonth[ctr-1]
+                break;
+                }
+              }             
+      			//get Expiration Year cookie value
+      			var cExpYearPos = allCookies.indexOf("cExpYear=")
+      			var start = cExpYearPos + 9
+      			var end = allCookies.indexOf(";", start)
+      			if (end == -1)
+      				{
+      				end = allCookies.length
+      				}
+      
+      			var cExpYear2 = allCookies.substring(start, end)
+      			}
+      	order = window.open("", "orderWindow", "toolbar=yes,width=750,height=700,status=yes,menubar=yes,resize=yes")
+      
+      	with (order.document)
+      		{
+      		write()
+      		close()
+      		write("<html><head><title>Order form for " + cName2 + "</title>")
+      		write("<link rel='stylesheet' type='text/css' href='jpstl.css'>")
+      		write("</head><body><br><br>")
+      		write("<table border='0' width='75%' cellspacing='0' cellpadding='0' align='center'>")
+      		write("<tr><td width='100%' class='cartHead' bgcolor='#CCFF99'>")
+      		write("<img border='0' src='images/px.gif' width='20' height='15'>")
+      		write("This is your Order Confirmation</td></tr>")
+      		write("<tr><td><br><br>")
+      
+      		//write values to the page
+      		write("<h5>Shipping Information:<\/h5>")
+      		write(cName2 + "<br>");
+      		write(cAddress2 + "<br>");
+      		write(cCity2 + ", " + cState2 + " " + cZip2 + "<br><br>");
+      		write("<h5>Billing Information:<\/h5>")
+      		write("Credit Card: "+ cCardType2 + " #" + cCardNum2 +"<br>");
+      		write("Expires: "+ vMonthDisplay + ", " + cExpYear2 + "<br><br>");
+      		write("</td></tr></table><br><br>")
+      		write("<TABLE align='center' borderColor='#000000' cellSpacing=0 cellPadding=4 border='1' width='75%'>")
+      		write("<TR><TH width='50%' nowrap><b>Product Name</b></TH>")
+      		write("<TH width='50%' nowrap><b>Price</b> </TH></TR>")
+      
+      		for (i in ShoppingCart)
+      			{
+      			cartTotal = cartTotal + ShoppingCart[i].Price
+      			if (ShoppingCart[i].ItemNum != null)
+      				ShoppingCart[i].displayOrder(order.document)
+      			}
+      		write("<TR><TD width='50%'><b>Total:</b></TD>")
+      		write("<TD width='50%' align='right'><b>$" + cartTotal + "</b></TD></TR>")
+      
+      		var salesTax = cartTotal * .0875
+      
+      		write("<TR><TD width='50%'><b>Sales Tax:</b></TD>")
+      		write("<TD width='50%' align='right'><b>$" + Math.round(salesTax * 100)/100 + "</b></TD></TR>")
+      
+      		var grandTotal = cartTotal + salesTax
+      
+      		write("<TR><TD width='50%'><b>Grand Total:</b></TD>")
+      		write("<TD width='50%' align='right'><b>$" + Math.round(grandTotal * 100)/100 + "</b></TD></TR>")
+      
+      		write("</TABLE><br><br><br><div align='center'>")
+      		write("<a href='JavaScript:window.close();' class='cartlink'>Close Window</a>")
+      		write("</div></body></html>")
+      		}
+      }		
+	}
+
+//end hiding script-->
+</script>
+
+
+
+</head>
+
+<body background="images/topbgr.gif">
+
+</body>
+</html>
